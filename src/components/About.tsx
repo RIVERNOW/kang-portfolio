@@ -1,13 +1,5 @@
 import { useLang } from '../context/LanguageContext'
 
-const kmongStats = [
-  { ko: '누적 판매', en: 'Total Sales', value: '504건' },
-  { ko: '누적 매출', en: 'Total Revenue', value: '29.2M원' },
-  { ko: '만족도', en: 'Satisfaction', value: '5.0 / 5' },
-  { ko: '메세지 응답률', en: 'Response Rate', value: '97%' },
-  { ko: '주문성공률', en: 'Order Success', value: '100%' },
-  { ko: '작업일 준수율', en: 'On-Time Rate', value: '100%' },
-]
 
 export default function About() {
   const { lang, t } = useLang()
@@ -85,67 +77,51 @@ export default function About() {
           </div>
 
           {/* Kmong Credentials */}
-          <div
+          <a
+            href="https://kmong.com/@개발자강팀장"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
+              display: 'block',
               marginTop: '48px',
-              padding: '28px 32px',
-              background: 'linear-gradient(135deg, #13131f 0%, #0f0f1e 100%)',
+              borderRadius: '16px',
+              overflow: 'hidden',
               border: '1px solid rgba(255,180,0,0.25)',
-              borderRadius: '14px',
-              boxShadow: '0 0 30px rgba(255,180,0,0.05)',
+              boxShadow: '0 0 40px rgba(255,180,0,0.08)',
+              textDecoration: 'none',
+              transition: 'all 0.3s',
+              position: 'relative',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.border = '1px solid rgba(255,180,0,0.5)'
+              e.currentTarget.style.boxShadow = '0 0 50px rgba(255,180,0,0.18)'
+              e.currentTarget.style.transform = 'translateY(-2px)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.border = '1px solid rgba(255,180,0,0.25)'
+              e.currentTarget.style.boxShadow = '0 0 40px rgba(255,180,0,0.08)'
+              e.currentTarget.style.transform = 'translateY(0)'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-              <span style={{ fontSize: '20px' }}>🏆</span>
-              <div>
-                <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#f59e0b', letterSpacing: '2px' }}>
-                  KMONG
-                </span>
-                <span
-                  style={{
-                    marginLeft: '10px',
-                    padding: '2px 10px',
-                    background: 'rgba(255,180,0,0.12)',
-                    border: '1px solid rgba(255,180,0,0.35)',
-                    borderRadius: '100px',
-                    fontSize: '11px', fontWeight: 700,
-                    color: '#f59e0b', fontFamily: 'monospace', letterSpacing: '1.5px',
-                  }}
-                >
-                  MASTER
-                </span>
-              </div>
+            <img
+              src="/images/kmong_master.jpg"
+              alt="Kmong Master Grade"
+              style={{ width: '100%', display: 'block' }}
+            />
+            <div style={{
+              position: 'absolute', bottom: 0, left: 0, right: 0,
+              padding: '16px 20px',
+              background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%)',
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            }}>
+              <span style={{ fontSize: '11px', color: '#fbbf24', fontFamily: 'monospace', letterSpacing: '2px' }}>
+                🏆 KMONG MASTER
+              </span>
+              <span style={{ fontSize: '11px', color: '#a8a29e', fontFamily: 'monospace' }}>
+                {t('프로필 보기 →', 'View Profile →')}
+              </span>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
-              {kmongStats.map((s) => (
-                <div
-                  key={s.en}
-                  style={{
-                    textAlign: 'center', padding: '12px 8px',
-                    background: 'rgba(255,180,0,0.04)', borderRadius: '8px',
-                    border: '1px solid rgba(255,180,0,0.1)',
-                  }}
-                >
-                  <div style={{ fontSize: '16px', fontWeight: 800, color: '#fbbf24', fontFamily: 'monospace', marginBottom: '4px' }}>
-                    {s.value}
-                  </div>
-                  <div style={{ fontSize: '10px', color: '#78716c', letterSpacing: '1px', fontFamily: 'monospace' }}>
-                    {t(s.ko, s.en)}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div style={{ marginTop: '14px', textAlign: 'right' }}>
-              <a
-                href="https://kmong.com/@개발자강팀장"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontSize: '11px', color: '#78716c', fontFamily: 'monospace', textDecoration: 'none', letterSpacing: '1px' }}
-              >
-                {t('크몽 프로필 보기 →', 'View Kmong Profile →')}
-              </a>
-            </div>
-          </div>
+          </a>
         </div>
 
         {/* Stats */}

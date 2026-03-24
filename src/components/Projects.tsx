@@ -494,10 +494,10 @@ export default function Projects() {
 
       <div className="stats-grid" style={{ marginTop: '80px', padding: '40px', background: '#13131f', border: '1px solid rgba(0,212,255,0.08)', borderRadius: '16px', textAlign: 'center' }}>
         {[
-          { ko: '크몽 누적 납품', en: 'Kmong Deliveries', value: '504건' },
-          { ko: '누적 매출', en: 'Total Revenue', value: '29.2M원' },
+          { ko: '프리랜서 납품', en: 'Freelance Deliveries', value: '700+' },
           { ko: 'Python 자동화 툴', en: 'Automation Tools', value: '50+' },
-          { ko: '클라이언트 만족도', en: 'Satisfaction', value: '5.0/5' },
+          { ko: '출시 앱', en: 'Published Apps', value: '3+' },
+          { ko: '클라이언트 만족도', en: 'Client Satisfaction', value: '100%' },
         ].map((s) => (
           <div key={s.en}>
             <div style={{ fontSize: '28px', fontWeight: 800, color: '#00d4ff', fontFamily: 'monospace', marginBottom: '6px' }} className="glow-sm">
