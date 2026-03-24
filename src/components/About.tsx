@@ -1,5 +1,14 @@
 import { useLang } from '../context/LanguageContext'
 
+const kmongStats = [
+  { ko: '누적 판매', en: 'Total Sales', value: '504건' },
+  { ko: '누적 매출', en: 'Total Revenue', value: '29.2M원' },
+  { ko: '만족도', en: 'Satisfaction', value: '5.0 / 5' },
+  { ko: '메세지 응답률', en: 'Response Rate', value: '97%' },
+  { ko: '주문성공률', en: 'Order Success', value: '100%' },
+  { ko: '작업일 준수율', en: 'On-Time Rate', value: '100%' },
+]
+
 export default function About() {
   const { lang, t } = useLang()
 
@@ -73,6 +82,69 @@ export default function About() {
             >
               {t('연락하기', 'GET IN TOUCH')}
             </a>
+          </div>
+
+          {/* Kmong Credentials */}
+          <div
+            style={{
+              marginTop: '48px',
+              padding: '28px 32px',
+              background: 'linear-gradient(135deg, #13131f 0%, #0f0f1e 100%)',
+              border: '1px solid rgba(255,180,0,0.25)',
+              borderRadius: '14px',
+              boxShadow: '0 0 30px rgba(255,180,0,0.05)',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+              <span style={{ fontSize: '20px' }}>🏆</span>
+              <div>
+                <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#f59e0b', letterSpacing: '2px' }}>
+                  KMONG
+                </span>
+                <span
+                  style={{
+                    marginLeft: '10px',
+                    padding: '2px 10px',
+                    background: 'rgba(255,180,0,0.12)',
+                    border: '1px solid rgba(255,180,0,0.35)',
+                    borderRadius: '100px',
+                    fontSize: '11px', fontWeight: 700,
+                    color: '#f59e0b', fontFamily: 'monospace', letterSpacing: '1.5px',
+                  }}
+                >
+                  MASTER
+                </span>
+              </div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
+              {kmongStats.map((s) => (
+                <div
+                  key={s.en}
+                  style={{
+                    textAlign: 'center', padding: '12px 8px',
+                    background: 'rgba(255,180,0,0.04)', borderRadius: '8px',
+                    border: '1px solid rgba(255,180,0,0.1)',
+                  }}
+                >
+                  <div style={{ fontSize: '16px', fontWeight: 800, color: '#fbbf24', fontFamily: 'monospace', marginBottom: '4px' }}>
+                    {s.value}
+                  </div>
+                  <div style={{ fontSize: '10px', color: '#78716c', letterSpacing: '1px', fontFamily: 'monospace' }}>
+                    {t(s.ko, s.en)}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: '14px', textAlign: 'right' }}>
+              <a
+                href="https://kmong.com/@개발자강팀장"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontSize: '11px', color: '#78716c', fontFamily: 'monospace', textDecoration: 'none', letterSpacing: '1px' }}
+              >
+                {t('크몽 프로필 보기 →', 'View Kmong Profile →')}
+              </a>
+            </div>
           </div>
         </div>
 
