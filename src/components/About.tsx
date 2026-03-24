@@ -178,6 +178,57 @@ export default function About() {
           ))}
         </div>
       </div>
+
+      {/* Experience */}
+      <div style={{ marginTop: '64px' }}>
+        <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#334155', letterSpacing: '3px', marginBottom: '28px' }}>
+          {t('경력', 'EXPERIENCE')}
+        </p>
+        <div
+          style={{
+            display: 'flex', gap: '0',
+            borderLeft: '2px solid rgba(0,212,255,0.15)',
+            paddingLeft: '28px',
+            position: 'relative',
+          }}
+        >
+          {/* dot */}
+          <div style={{
+            position: 'absolute', left: '-6px', top: '6px',
+            width: '10px', height: '10px', borderRadius: '50%',
+            background: '#00d4ff', boxShadow: '0 0 8px rgba(0,212,255,0.6)',
+          }} />
+          <div style={{ flex: 1 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '10px' }}>
+              <span style={{ fontFamily: 'monospace', fontSize: '15px', fontWeight: 700, color: '#e2e8f0' }}>
+                REACTEDU
+              </span>
+              <span style={{
+                padding: '2px 10px', background: 'rgba(0,212,255,0.08)',
+                border: '1px solid rgba(0,212,255,0.2)', borderRadius: '100px',
+                fontSize: '11px', color: '#00d4ff', fontFamily: 'monospace',
+              }}>
+                {t('프론트엔드 개발자', 'Frontend Developer')}
+              </span>
+              <span style={{ fontSize: '12px', color: '#475569', fontFamily: 'monospace' }}>
+                2021.08 — 2022.08
+              </span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {[
+                { ko: '자사 강의 플랫폼 웹사이트 프론트엔드 개발 및 유지보수', en: 'Built and maintained the company\'s in-house lecture platform frontend' },
+                { ko: '웹 개발 외주 수주 방법 교육 커리큘럼 기획 및 진행', en: 'Designed and led curriculum on winning freelance web development projects' },
+                { ko: 'React 기반 UI 컴포넌트 설계 및 반응형 구현', en: 'Designed React-based UI components with responsive layouts' },
+              ].map((item, i) => (
+                <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <span style={{ color: '#00d4ff', fontSize: '12px', marginTop: '3px', flexShrink: 0 }}>▸</span>
+                  <span style={{ fontSize: '14px', color: '#94a3b8', lineHeight: 1.7 }}>{t(item.ko, item.en)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
